@@ -1,0 +1,16 @@
+<resources>
+    <string name="movie">Movie</string>
+    <string name="about">About</string>
+    <string name="nama">Chandra Abdul Fattah</string>
+    <string name="email_about">chandraaf28@gmail.com</string>
+    <string name="detail">Detail</string>
+
+    <string name="judul">Judul</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="tahun_rilis">Tahun Rilis</string>
+    <string name="durasi">Durasi</string>
+    <string name="genre">Genre</string>
+    <string name="user_score">User Score</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,81 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "BASE_URL_BOT", "\"https://api.telegram.org/bot522254269:AAF8rHpXnXK1YO3eD8wbH9zK4eJVlKtDZyY/\"")
+        buildConfigField("String", "KEY_LOGIN", "\"HIg60jt5gYkckOND\"")
+        buildConfigField("String", "KEY_REGISTER", "\"ErDZJm3v8gmZVS7j\"")
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        staging {
+
+        }
+        v1 {
+
+        }
+        demo {
+
+        }
+        release {
+
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    // # Core
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.appCompatVersion"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.ext.supportLibraryVersion"
+    implementation "com.google.android.material:material:$rootProject.ext.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.ext.constraintLayoutVersion"
+
+    // # Image
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.ext.glideVersion"
+
+    // # Reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+
+    //  Map
+    implementation "com.google.android.gms:play-services-location:$rootProject.ext.playServiceVersion"
+
+    // # Logger
+    implementation "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
+
+    // # Networking
+    implementation "com.amitshekhar.android:rx2-android-networking:$rootProject.ext.rx2FastAndroidNetworking"
+
+    // Hawk (replace Shared Preferences)
+    implementation "com.orhanobut:hawk:$rootProject.ext.hawkVersion"
+
+    // #Firebase
+    implementation "com.google.firebase:firebase-core:$rootProject.ext.firebaseCoreVersion"
+    implementation "com.google.firebase:firebase-messaging:$rootProject.ext.firebaseMessagingVersion"
+
+    // # Local Unit Test
+    testImplementation "junit:junit:$rootProject.ext.junitVersion"
+    androidTestImplementation "androidx.test:runner:$rootProject.ext.testRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
+}
+repositories {
+    mavenCentral()
+}
