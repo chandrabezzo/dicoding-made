@@ -1,4 +1,4 @@
-package com.bezzo.moviecatalogue.features.movie
+package com.bezzo.moviecatalogue.features.tvShow
 
 import android.os.Bundle
 import android.view.View
@@ -11,12 +11,12 @@ import com.bezzo.moviecatalogue.adapter.MovieRVAdapter
 import com.bezzo.moviecatalogue.constanta.AppConstant
 import com.bezzo.moviecatalogue.data.model.Movie
 import com.bezzo.moviecatalogue.features.detail.DetailActivity
-import kotlinx.android.synthetic.main.fragment_movie.*
+import kotlinx.android.synthetic.main.fragment_tv_show.*
 import org.koin.android.ext.android.inject
 
-class MovieFragment : BaseFragment(), MovieViewContract {
+class TvShowFragment : BaseFragment(), TvShowViewContract {
 
-    private val presenter: MoviePresenter<MovieViewContract> by inject()
+    private val presenter: TvShowPresenter<TvShowViewContract> by inject()
     private val adapter: MovieRVAdapter by inject()
     private val list = ArrayList<Movie>()
 
@@ -25,14 +25,15 @@ class MovieFragment : BaseFragment(), MovieViewContract {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         context?.let {
             val layoutManager = LinearLayoutManager(it)
-            rv_movie.layoutManager = layoutManager
-            rv_movie.adapter = adapter
-            presenter.getMovie()
+            rv_tv_show.layoutManager = layoutManager
+            rv_tv_show.adapter = adapter
+            presenter.getTvShows()
 
-            adapter.setOnClick(object : OnItemClickListener{
+            adapter.setOnClick(object : OnItemClickListener {
                 override fun onItemClick(itemView: View, position: Int) {
                     launchActivity<DetailActivity>{
                         putExtra(AppConstant.DATA_MOVIE, list[position])
@@ -52,10 +53,10 @@ class MovieFragment : BaseFragment(), MovieViewContract {
     }
 
     override fun setLayout(): Int {
-        return R.layout.fragment_movie
+        return R.layout.fragment_tv_show
     }
 
-    override fun showMovies(values: ArrayList<Movie>) {
+    override fun showTvShow(values: ArrayList<Movie>) {
         list.clear()
         list.addAll(values)
         adapter.setItem(list)

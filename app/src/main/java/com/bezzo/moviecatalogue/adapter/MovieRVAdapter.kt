@@ -10,7 +10,7 @@ import com.bezzo.moviecatalogue.data.model.Movie
 import com.bezzo.core.base.BaseHolder
 import com.bezzo.core.listener.OnItemClickListener
 import com.bezzo.core.util.GlideApp
-import kotlinx.android.synthetic.main.item_rv_friend.view.*
+import kotlinx.android.synthetic.main.item_rv_movie.view.*
 
 class MovieRVAdapter constructor(private val context: Context, private val list: ArrayList<Movie>)
     : RecyclerView.Adapter<MovieRVAdapter.Item>(){
@@ -22,7 +22,7 @@ class MovieRVAdapter constructor(private val context: Context, private val list:
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item {
-        return Item(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_friend, parent, false))
+        return Item(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_movie, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -45,7 +45,7 @@ class MovieRVAdapter constructor(private val context: Context, private val list:
         }
 
         override fun setContent(model: Movie) {
-            itemView.tv_judul.text = "${model.judul} (${model.tahunRilis})"
+            itemView.tv_judul.text = "${model.title} (${model.releaseYear})"
             itemView.tv_desc.text = "${model.userScore} - ${model.genre}"
             GlideApp.with(context).load(model.image).into(itemView.iv_profile)
         }

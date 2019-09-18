@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="movie">Movie</string>
     <string name="about">About</string>
@@ -12,7 +13,7 @@
     <string name="genre">Genre</string>
     <string name="user_score">User Score</string>
     <string name="tv_show">TV Show</string>
-    <string name="setting">Setting</string>
+    <string name="setting">Pengaturan</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

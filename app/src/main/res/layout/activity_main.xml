@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-        android:id="@+id/rv_main"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rv_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".features.main.MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".features.main.MainActivity">
+        android:layout_height="?actionBarSize"
+        android:minHeight="?android:attr/actionBarSize"
+        android:maxHeight="?android:attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        android:background="@color/colorPrimary"
+        android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="@string/app_name"/>
 
     <FrameLayout
         android:id="@+id/fl_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/bnv_main"/>
+        android:layout_above="@id/bnv_main"
+        android:layout_below="@id/toolbar"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bnv_main"

@@ -29,11 +29,11 @@ class DetailActivity : BaseActivity(), DetailViewContract {
         }
 
         GlideApp.with(this).load(data.image).into(iv_profile)
-        tv_judul.text = "${data.judul} (${data.tahunRilis})"
-        tv_durasi.text = data.durasi
+        tv_judul.text = "${data.title} (${data.releaseYear})"
+        tv_durasi.text = data.duration
         tv_genre.text = data.genre
         tv_user_score.text = data.userScore
-        tv_deskripsi.text = data.deskripsi
+        tv_deskripsi.text = data.description
     }
 
     override fun onDestroy() {
