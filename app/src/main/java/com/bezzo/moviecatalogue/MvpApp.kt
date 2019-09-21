@@ -4,10 +4,10 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.androidnetworking.AndroidNetworking
-import com.bezzo.moviecatalogue.di.allModule
 import com.bezzo.core.CoreModul
 import com.bezzo.core.util.AppLoggerUtil
 import com.bezzo.core.util.LocaleUtil
+import com.bezzo.moviecatalogue.di.allModule
 import com.orhanobut.hawk.Hawk
 import org.koin.android.ext.android.startKoin
 

@@ -1,18 +1,18 @@
 <resources>
     <string name="movie">Movie</string>
     <string name="about">About</string>
-    <string name="nama">Chandra Abdul Fattah</string>
-    <string name="email_about">chandraaf28@gmail.com</string>
     <string name="detail">Detail</string>
 
-    <string name="judul">Judul</string>
-    <string name="deskripsi">Deskripsi</string>
-    <string name="tahun_rilis">Tahun Rilis</string>
-    <string name="durasi">Durasi</string>
+    <string name="judul">Title</string>
+    <string name="deskripsi">Description</string>
+    <string name="popularity">Popularity</string>
     <string name="genre">Genre</string>
+
     <string name="user_score">User Score</string>
     <string name="tv_show">TV Show</string>
     <string name="setting">Setting</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="english">English</string>
+    <string name="retry">Retry</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

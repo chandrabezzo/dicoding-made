@@ -49,6 +49,8 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.ext.androidArchVersion"
     implementation "androidx.multidex:multidex:$rootProject.ext.multiDexVersion"
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
 
     implementation('io.socket:socket.io-client:0.8.3') {
         exclude group: 'org.json', module: 'json'
@@ -69,6 +71,7 @@ dependencies {
 
     // # Dependency Injection
     implementation "org.koin:koin-android:$rootProject.ext.koinVersion"
+    implementation "org.koin:koin-android-viewmodel:$rootProject.ext.koinVersion"
 
     // # Reactive
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"

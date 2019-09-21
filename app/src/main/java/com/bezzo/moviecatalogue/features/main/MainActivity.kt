@@ -1,24 +1,21 @@
 package com.bezzo.moviecatalogue.features.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.view.View
+import com.bezzo.core.base.BaseActivity
+import com.bezzo.core.extension.launchFragment
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.features.about.AboutFragment
-import com.bezzo.moviecatalogue.features.movie.MovieFragment
-import com.bezzo.core.base.BaseActivity
-import com.bezzo.core.extension.launchActivity
-import com.bezzo.core.extension.launchFragment
 import com.bezzo.moviecatalogue.features.film.FilmFragment
 import com.bezzo.moviecatalogue.features.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : BaseActivity() {
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
-
         setSupportActionBar(toolbar)
         mActionBar = supportActionBar
         setActionBarTitle(getString(R.string.app_name))
@@ -50,10 +47,16 @@ class MainActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
             R.id.nav_setting -> {
-                launchActivity<SettingActivity>()
+                val intent = Intent(this, SettingActivity::class.java)
+                startActivityForResult(intent, 0)
             }
         }
 
         return true
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        recreate()
     }
 }

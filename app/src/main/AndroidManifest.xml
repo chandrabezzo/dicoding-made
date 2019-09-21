@@ -9,9 +9,16 @@
             android:roundIcon="@drawable/icon"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".features.setting.SettingActivity"></activity>
-        <activity android:name=".features.detail.DetailActivity"></activity>
-        <activity android:name=".features.main.MainActivity"></activity>
+        <activity android:name=".features.detailTv.DetailTvActivity"></activity>
+        <activity
+                android:name=".features.setting.SettingActivity"
+                android:configChanges="locale" />
+        <activity
+                android:name=".features.detailMovie.DetailMovieActivity"
+                android:configChanges="locale" />
+        <activity
+                android:name=".features.main.MainActivity"
+                android:configChanges="locale" />
         <activity android:name=".features.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

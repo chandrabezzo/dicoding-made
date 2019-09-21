@@ -8,9 +8,9 @@ import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
 
-import java.util.Locale;
-
 import androidx.annotation.RequiresApi;
+
+import java.util.Locale;
 
 /**
  * Created by bezzo on 04/02/18.
@@ -37,7 +37,7 @@ public class LocaleUtil {
         persist(context, language);
 
         Locale locale = new Locale(language);
-        locale.setDefault(locale);
+        Locale.setDefault(locale);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return updateResources(context, locale);

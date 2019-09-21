@@ -5,14 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bezzo.moviecatalogue.R
-import com.bezzo.moviecatalogue.data.model.Movie
 import com.bezzo.core.base.BaseHolder
 import com.bezzo.core.listener.OnItemClickListener
 import com.bezzo.core.util.GlideApp
+import com.bezzo.moviecatalogue.R
+import com.bezzo.moviecatalogue.data.model.ResultMovie
 import kotlinx.android.synthetic.main.item_rv_movie.view.*
 
-class MovieRVAdapter constructor(private val context: Context, private val list: ArrayList<Movie>)
+class MovieRVAdapter constructor(private val context: Context, private val list: ArrayList<ResultMovie>)
     : RecyclerView.Adapter<MovieRVAdapter.Item>(){
 
     lateinit var listener: OnItemClickListener
@@ -33,21 +33,22 @@ class MovieRVAdapter constructor(private val context: Context, private val list:
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<Movie>){
+    fun setItem(values: ArrayList<ResultMovie>){
         list.clear()
         list.addAll(values)
     }
 
-    inner class Item(itemView: View): BaseHolder<Movie>(itemView){
+    inner class Item(itemView: View): BaseHolder<ResultMovie>(itemView){
 
         init {
             itemView.setOnClickListener { listener.onItemClick(it, layoutPosition) }
         }
 
-        override fun setContent(model: Movie) {
-            itemView.tv_judul.text = "${model.title} (${model.releaseYear})"
-            itemView.tv_desc.text = "${model.userScore} - ${model.genre}"
-            GlideApp.with(context).load(model.image).into(itemView.iv_profile)
+        override fun setContent(model: ResultMovie) {
+            itemView.tv_judul.text = "${model.title} (${model.releaseDate})"
+            itemView.tv_desc.text = "${model.voteAverage}"
+            val image = "https://image.tmdb.org/t/p/w185/${model.posterPath}"
+            GlideApp.with(context).load(image).into(itemView.iv_profile)
         }
     }
 }

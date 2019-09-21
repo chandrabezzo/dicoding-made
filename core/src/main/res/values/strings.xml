@@ -1,31 +1,16 @@
 <resources>
-    <string name="telegram_id">\@chandra_bezzo</string>
 
-    <string name="perizinan">Perizinan</string>
     <string name="message_perizinan">Izinkan aplikasi mengakses %s supaya aplikasi dapat berjalan baik.</string>
-    <string name="cancel">Batal</string>
-    <string name="ok">Ok</string>
-    <string name="pengaturan_gps">Pengaturan GPS</string>
-    <string name="akurasi_tinggi_mode">Aktifkan GPS dan gunakan mode akurasi tinggi untuk mendapatkan lokasi.</string>
-    <string name="turn_on_gps">Harap hidupkan GPS</string>
     <string name="not_support_play_service">Tidak support Google Play Service</string>
     <string name="device_not_support">Perangkat ini tidak didukung</string>
     <string name="title_permission">Perizinan Aplikasi</string>
     <string name="content_permission">Ijinkan aplikasi untuk mengakses %s?</string>
-    <string name="loading">Loading...</string>
-    <string name="lengkapi_form">Silahkan Lengkapi Form</string>
     <string name="penyimpanan">Penyimpanan</string>
-    <string name="lengkapi_input">Silahkan Lengkapi %s</string>
 
     <!-- Handle Error -->
     <string name="service_not_found">Service tidak ditemukan</string>
     <string name="network_not_stable">Pastikan koneksi internet anda stabil</string>
     <string name="server_error">Server Error</string>
     <string name="service_not_connected">Tidak terhubung ke service</string>
-    <string name="no_access">Anda tidak mempunyai akses</string>
     <string name="some_error">Terjadi kesalahan</string>
-    <string name="powered_by">Powered By :</string>
-    <string name="edit">Edit</string>
-    <string name="instalasi_sim_cbbt">Instalasi SIM RSUD Cibabat</string>
-    <string name="data_pasien_not_found">Data pasien tidak ditemukan</string>
 </resources>

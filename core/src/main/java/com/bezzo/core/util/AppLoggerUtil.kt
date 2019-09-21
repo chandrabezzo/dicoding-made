@@ -15,9 +15,8 @@
 
 package com.bezzo.core.util
 
-import com.bezzo.core.*
-
-import timber.log.*
+import com.bezzo.core.BuildConfig
+import timber.log.Timber
 
 /**
  * Created by amitshekhar on 15/02/17.

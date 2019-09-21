@@ -7,14 +7,14 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.bezzo.core.R
 
-inline fun <reified T : Any> Fragment.launchActivity(noinline init: Intent.() -> Unit = {}) {
-    activity?.let {
-        val intent = newIntent<T>(it)
-        intent.init()
-        startActivity(intent)
-        it.overridePendingTransition(R.anim.slide_in_from_right, R.anim.scale_out)
-    }
-}
+//inline fun <reified T : Any> Fragment.launchActivity(noinline init: Intent.() -> Unit = {}) {
+//    activity?.let {
+//        val intent = newIntent<T>(it)
+//        intent.init()
+//        startActivity(intent)
+//        it.overridePendingTransition(R.anim.slide_in_from_right, R.anim.scale_out)
+//    }
+//}
 
 inline fun <reified T : Any> Fragment.launchActivity(enterAnimation: Int, exitAnimation: Int,
                                                      noinline init: Intent.() -> Unit = {}) {
@@ -27,17 +27,17 @@ inline fun <reified T : Any> Fragment.launchActivity(enterAnimation: Int, exitAn
     }
 }
 
-inline fun <reified T : Any> Fragment.launchActivity(
-        requestCode: Int = -1,
-        noinline init: Intent.() -> Unit = {}) {
-
-    activity?.let {
-        val intent = newIntent<T>(it)
-        intent.init()
-        startActivityForResult(intent, requestCode)
-        it.overridePendingTransition(R.anim.slide_in_from_right, R.anim.scale_out);
-    }
-}
+//inline fun <reified T : Any> Fragment.launchActivity(
+//        requestCode: Int = -1,
+//        noinline init: Intent.() -> Unit = {}) {
+//
+//    activity?.let {
+//        val intent = newIntent<T>(it)
+//        intent.init()
+//        startActivityForResult(intent, requestCode)
+//        it.overridePendingTransition(R.anim.slide_in_from_right, R.anim.scale_out)
+//    }
+//}
 
 inline fun <reified T : Any> Fragment.launchActivity(
         options: Bundle? = null,

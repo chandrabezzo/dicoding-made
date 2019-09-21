@@ -62,7 +62,7 @@ inline fun <reified T : Any> Activity.launchActivity(
     val intent = newIntent<T>(this)
     intent.init()
     startActivityForResult(intent, requestCode)
-    overridePendingTransition(R.anim.slide_in_from_right, R.anim.scale_out);
+    overridePendingTransition(R.anim.slide_in_from_right, R.anim.scale_out)
 }
 
 inline fun <reified T : Any> Activity.launchActivity(

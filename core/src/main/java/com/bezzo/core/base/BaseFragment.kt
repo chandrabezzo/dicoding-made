@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.bezzo.core.extension.AppExtensions
-import kotlinx.android.synthetic.main.default_toolbar.*
 
 /**
  * Created by bezzo on 21/12/17.
@@ -37,11 +36,11 @@ abstract class BaseFragment : Fragment(), BaseFragmentContract {
         dataReceived = arguments
         mContext = activity
 
-        if ((activity as BaseActivity).default_toolbar != null){
-            (activity as BaseActivity).default_toolbar.setNavigationOnClickListener(View.OnClickListener { view: View? ->
-                onBackPressed()
-            })
-        }
+//        if ((activity as BaseActivity).default_toolbar != null){
+//            (activity as BaseActivity).default_toolbar.setNavigationOnClickListener(View.OnClickListener { view: View? ->
+//                onBackPressed()
+//            })
+//        }
 
         onViewInitialized(savedInstanceState)
         return rootView

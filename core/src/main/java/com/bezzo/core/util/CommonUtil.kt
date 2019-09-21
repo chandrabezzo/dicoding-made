@@ -7,15 +7,13 @@ import android.os.Build
 import android.provider.Settings
 import android.text.Html
 import android.text.Spanned
-
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-
 import java.io.IOException
 import java.nio.charset.Charset
 import java.text.NumberFormat
-import java.util.Locale
+import java.util.*
 
 /**
  * Created by bezzo on 26/09/17.

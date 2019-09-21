@@ -35,7 +35,7 @@ object PermissionUtil {
         if (currentAPIVersion >= android.os.Build.VERSION_CODES.M) {
             if (isNotGranted(context, writePermission) && isNotGranted(context, readPermission)) {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(context as Activity, writePermission)
-                        && ActivityCompat.shouldShowRequestPermissionRationale(context as Activity, readPermission)) {
+                        && ActivityCompat.shouldShowRequestPermissionRationale(context, readPermission)) {
                     showAlertDialog(context, context.getString(R.string.title_permission),
                             String.format(context.getString(R.string.content_permission),
                                           context.getString(R.string.penyimpanan)),

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#FFFFFF</color>
-    <color name="dark_gray">#696969</color>
     <color name="black_effective">#2a2a2a</color>
-    <color name="top_snack_bar_color">#4CC9A1</color>
-    <color name="colorSecondary">#7f1a18</color>
 
-    <color name="colorTextPrimary">#FFFFFF</color>
-    <color name="colorTextSecondary">#7f1a18</color>
-    <color name="bg_list">#E6E6E6</color>
-    <color name="separator">#C9C9C9</color>
-    <color name="light_gray">#949494</color>
 </resources>

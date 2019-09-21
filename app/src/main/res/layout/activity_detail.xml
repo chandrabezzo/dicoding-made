@@ -7,40 +7,54 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:scrollbars="vertical"
-    tools:context="com.bezzo.moviecatalogue.features.detail.DetailActivity">
+    tools:context="com.bezzo.moviecatalogue.features.detailMovie.DetailMovieActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:minHeight="?android:attr/actionBarSize"
-                android:maxHeight="?android:attr/actionBarSize"
-                android:fitsSystemWindows="true"
-                android:background="@color/colorPrimary"
-                app:title="@string/detail"
-                app:titleTextColor="@color/white"
-                android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"/>
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?android:attr/actionBarSize"
+            android:maxHeight="?android:attr/actionBarSize"
+            android:fitsSystemWindows="true"
+            android:background="@color/colorPrimary"
+            app:title="@string/detail"
+            app:titleTextColor="@color/white"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/iv_poster"
+            android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar"/>
 
         <com.bezzo.moviecatalogue.widget.CircleImageView
-                android:id="@+id/iv_profile"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"/>
+            android:id="@+id/iv_poster"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cv_title"
+                />
 
         <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:cardElevation="6dp">
+            android:id="@+id/cv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardElevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_poster"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cv_popularity">
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -63,12 +77,17 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/cv_popularity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_title"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/cv_user_score">
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -77,7 +96,7 @@
                     android:layout_margin="8dp">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tv_durasi"
+                        android:id="@+id/tv_popularity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
@@ -86,45 +105,22 @@
                 <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/durasi"/>
+                        android:text="@string/popularity"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/cv_user_score"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                app:cardElevation="6dp">
-
-            <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="8dp">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tv_genre"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="@color/colorPrimary"/>
-
-                <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/genre"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_popularity"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/cv_desc">
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -147,13 +143,18 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+                android:id="@+id/cv_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
-                app:cardElevation="6dp">
+                app:cardElevation="6dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_user_score"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="parent">
 
             <LinearLayout
                     android:layout_width="match_parent"
@@ -174,5 +175,5 @@
                         android:text="@string/deskripsi"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

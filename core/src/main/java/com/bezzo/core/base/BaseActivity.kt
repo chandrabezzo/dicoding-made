@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.ActionBar
@@ -15,7 +14,6 @@ import com.bezzo.core.R
 import com.bezzo.core.extension.AppExtensions
 import com.bezzo.core.extension.toast
 import com.bezzo.core.util.LocaleUtil
-import kotlinx.android.synthetic.main.default_toolbar.*
 
 /**
  * Created by bezzo on 26/09/17.
@@ -35,9 +33,9 @@ abstract class BaseActivity : AppCompatActivity(), BaseActivityContract, BaseFra
         mContext = this
         dataReceived = intent.extras
 
-        setSupportActionBar(default_toolbar)
+//        setSupportActionBar(default_to)
 
-        mActionBar = supportActionBar
+//        mActionBar = supportActionBar
 
 //        if (default_toolbar != null){
 //            default_toolbar.setNavigationOnClickListener(View.OnClickListener { view: View ->
@@ -53,7 +51,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseActivityContract, BaseFra
     }
 
     override fun attachBaseContext(newBase: Context?) {
-        super.attachBaseContext(LocaleUtil.onAttach(newBase))
+        super.attachBaseContext(LocaleUtil.onAttach(newBase, LocaleUtil.getLanguage(newBase)))
     }
 
     protected abstract fun onInitializedView(savedInstanceState: Bundle?)

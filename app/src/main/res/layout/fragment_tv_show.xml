@@ -1,13 +1,29 @@
-<LinearLayout
+<RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.bezzo.moviecatalogue.features.movie.MovieFragment">
 
+    <ProgressBar
+            android:id="@+id/pb_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
     <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_tv_show"
+            android:id="@+id/rv_tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:visibility="visible"
             tools:listitem="@layout/item_rv_movie" />
-</LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+            android:id="@+id/mb_retry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:text="@string/retry"/>
+</RelativeLayout>

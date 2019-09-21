@@ -77,7 +77,7 @@ fun EditText.isEmailInvalid(): Boolean {
         !Patterns.EMAIL_ADDRESS.matcher(str).matches() -> {
             error = "Invalid email address."
             requestFocus()
-            true;
+            true
         }
         else -> false
     }
@@ -95,7 +95,7 @@ fun EditText.isPasswordInvalid(): Boolean {
         str.length < 6 -> {
             error = "Password must be at least 6 characters"
             requestFocus()
-            true;
+            true
         }
         else -> false
     }
@@ -114,12 +114,12 @@ fun EditText.isPasswordNotMatch(firstPass: EditText): Boolean {
         str.length < 6 -> {
             error = "Password must be at least 6 characters"
             requestFocus()
-            true;
+            true
         }
         str != pass -> {
             error = "Password do not match."
             requestFocus()
-            true;
+            true
         }
         else -> false
     }
@@ -153,7 +153,7 @@ fun TextInputLayout.isEmailInvalid(): Boolean {
         !Patterns.EMAIL_ADDRESS.matcher(str).matches() -> {
             error = "Invalid email address."
             requestFocus()
-            true;
+            true
         }
         else -> {
             error = ""
@@ -174,7 +174,7 @@ fun TextInputLayout.isPasswordInvalid(): Boolean {
         str.length < 6 -> {
             error = "Password must be at least 6 characters"
             requestFocus()
-            true;
+            true
         }
         else -> {
             error = ""

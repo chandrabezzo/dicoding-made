@@ -12,12 +12,10 @@ import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.fragment_film.*
 import org.koin.android.ext.android.inject
 
-class FilmFragment : BaseFragment(), FilmViewContract {
-
-    private val presenter: FilmPresenter<FilmViewContract> by inject()
+class FilmFragment : BaseFragment() {
 
     override fun onViewInitialized(savedInstanceState: Bundle?) {
-        presenter.onAttach(this)
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,11 +39,6 @@ class FilmFragment : BaseFragment(), FilmViewContract {
                 }
             }
         })
-    }
-
-    override fun onDestroy() {
-        presenter.onDetach()
-        super.onDestroy()
     }
 
     override fun setLayout(): Int {
