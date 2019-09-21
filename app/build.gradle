@@ -73,10 +73,6 @@ dependencies {
     implementation "org.koin:koin-android:$rootProject.ext.koinVersion"
     implementation "org.koin:koin-android-viewmodel:$rootProject.ext.koinVersion"
 
-    // # Reactive
-    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjava2Version"
-    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
-
     // # Logger
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
 

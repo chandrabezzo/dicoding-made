@@ -23,7 +23,7 @@ class TvShowViewModel(
             }
 
             override fun onFailed(error: ANError) {
-                state.postValue(Error(error.localizedMessage))
+                state.postValue(Error(handleApiError(error)))
             }
         })
     }

@@ -13,8 +13,6 @@ import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.bezzo.core.R
 import com.bezzo.core.util.AppLoggerUtil
-import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.GoogleApiAvailability
 
 inline fun <reified T : Any> Activity.launchActivity(isFinish : Boolean, noinline init: Intent.() -> Unit = {}) {
     val intent = newIntent<T>(this)
@@ -162,22 +160,6 @@ inline fun AppCompatActivity.launchDialog(classDialog: Class<*>,
     fragment?.arguments = data
 
     fragment?.show(fm, "TAG")
-}
-
-fun Activity.checkPlayService() : Boolean {
-    val apiAvailability = GoogleApiAvailability.getInstance()
-    val resultCode = apiAvailability.isGooglePlayServicesAvailable(this)
-    if (resultCode != ConnectionResult.SUCCESS) {
-        if (apiAvailability.isUserResolvableError(resultCode)) {
-            apiAvailability.getErrorDialog(this, resultCode, 0).show()
-        } else {
-            AppLoggerUtil.e(this.getString(R.string.not_support_play_service))
-            toast(getString(R.string.device_not_support), Toast.LENGTH_SHORT)
-            finish()
-        }
-        return false
-    }
-    return true
 }
 
 fun Activity.isServiceRunning(serviceClass: Class<*>) : Boolean {
