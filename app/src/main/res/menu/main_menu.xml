@@ -6,6 +6,11 @@
         android:icon="@drawable/ic_movie_black" />
 
     <item
+        android:id="@+id/nav_favorite"
+        android:title="@string/favorite"
+        android:icon="@drawable/ic_favorite" />
+
+    <item
         android:id="@+id/nav_about"
         android:title="@string/about"
         android:icon="@drawable/ic_info_black" />

@@ -1,4 +1,5 @@
-package com.bezzo.moviecatalogue.features.tvShow
+ package com.bezzo.moviecatalogue.features.favorite
+
 
 import android.os.Bundle
 import android.view.Menu
@@ -11,41 +12,43 @@ import com.bezzo.core.base.*
 import com.bezzo.core.extension.hide
 import com.bezzo.core.extension.launchActivity
 import com.bezzo.core.extension.show
-import com.bezzo.core.extension.toast
 import com.bezzo.core.listener.OnItemClickListener
 import com.bezzo.moviecatalogue.R
-import com.bezzo.moviecatalogue.adapter.TvShowRVAdapter
+import com.bezzo.moviecatalogue.adapter.FavoriteRvAdapter
 import com.bezzo.moviecatalogue.constanta.AppConstant
-import com.bezzo.moviecatalogue.data.model.ResultMovie
-import com.bezzo.moviecatalogue.data.model.ResultTvShow
-import com.bezzo.moviecatalogue.features.detailTv.DetailTvActivity
-import com.bezzo.moviecatalogue.features.main.MainActivity
-import kotlinx.android.synthetic.main.fragment_tv_show.*
+import com.bezzo.moviecatalogue.data.model.Favorite
+import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.android.ext.android.inject
 
-class TvShowFragment : BaseFragment() {
+ class FavoriteFragment : BaseFragment() {
 
-    private val viewModel: TvShowViewModel by inject()
-    private val adapter: TvShowRVAdapter by inject()
-    private val list = ArrayList<ResultTvShow>()
+    private val viewModel: FavoriteViewModel by inject()
+    private val adapter: FavoriteRvAdapter by inject()
+    private val list : MutableList<Favorite> = ArrayList()
 
     override fun onViewInitialized(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.getFavorite()
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         context?.let {
             val layoutManager = LinearLayoutManager(it)
-            rv_tv.layoutManager = layoutManager
-            rv_tv.adapter = adapter
-            viewModel.getTv()
-            viewModel.state.observe(this, movies)
+            rv_favorite.layoutManager = layoutManager
+            rv_favorite.adapter = adapter
+            viewModel.getFavorite()
+            viewModel.state.observe(this, favorites)
 
             adapter.setOnClick(object : OnItemClickListener {
                 override fun onItemClick(itemView: View, position: Int) {
-                    launchActivity<DetailTvActivity>{
-                        putExtra(AppConstant.DATA_TV, list[position])
+                    launchActivity<DetailFavoriteActivity>{
+                        putExtra(AppConstant.DATA_FAVORITE, list[position])
                     }
                 }
 
@@ -57,33 +60,33 @@ class TvShowFragment : BaseFragment() {
     }
 
     override fun setLayout(): Int {
-        return R.layout.fragment_tv_show
+        return R.layout.fragment_favorite
     }
 
-    private val movies = Observer<ViewModelState> { state ->
-
-        when(state){
+    private val favorites = Observer<ViewModelState> {
+        when(it){
             is Loading -> {
-                rv_tv.hide()
-                mb_retry.hide()
-                pb_tv.show()
+               pb_favorite.show()
+                rv_favorite.hide()
+                tv_empty.hide()
             }
             is Receive<*> -> {
-                pb_tv.hide()
-                rv_tv.show()
-                mb_retry.hide()
+                pb_favorite.hide()
+                rv_favorite.show()
+                tv_empty.hide()
 
                 list.clear()
-                list.addAll(state.data as MutableList<ResultTvShow>)
+                list.addAll(it.data as MutableList<Favorite>)
                 adapter.setItem(list)
                 adapter.notifyDataSetChanged()
             }
             is Error -> {
-                context?.toast(state.message)
 
-                mb_retry.show()
-                pb_tv.hide()
-                rv_tv.hide()
+            }
+            is Empty -> {
+                pb_favorite.hide()
+                rv_favorite.hide()
+                tv_empty.show()
             }
         }
     }
@@ -94,16 +97,16 @@ class TvShowFragment : BaseFragment() {
         val searchView = mSearchmenuItem.actionView as SearchView
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                val listSearch = ArrayList<ResultTvShow>()
-                listSearch.addAll(list.filter { it.name.contains(query.toString()) })
+                val listSearch = ArrayList<Favorite>()
+                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
                 adapter.setItem(listSearch)
                 adapter.notifyDataSetChanged()
                 return true
             }
 
             override fun onQueryTextChange(query: String?): Boolean {
-                val listSearch = ArrayList<ResultTvShow>()
-                listSearch.addAll(list.filter { it.name.contains(query.toString()) })
+                val listSearch = ArrayList<Favorite>()
+                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
                 adapter.setItem(listSearch)
                 adapter.notifyDataSetChanged()
                 return true

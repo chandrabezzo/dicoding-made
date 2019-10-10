@@ -14,5 +14,17 @@
     <string name="indonesia">Indonesia</string>
     <string name="english">English</string>
     <string name="retry">Retry</string>
+    <string name="movie_empty">Movie Empty</string>
+    <string name="tv_show_empty">TV Show Empty</string>
+    <string name="favorite">Favorite</string>
+    <string name="empty_favorite">Empty Favorite</string>
+    <string name="berhasil_ditambahkan_favorite">Added Favorite Success</string>
+    <string name="berhasil_dihapus_favorite">Remove from favorite Success</string>
+    <string name="judul_name">%1$s (%2$s)</string>
+    <string name="name">Name</string>
+    <string name="search">Search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

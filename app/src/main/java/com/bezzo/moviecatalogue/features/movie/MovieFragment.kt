@@ -1,7 +1,10 @@
 package com.bezzo.moviecatalogue.features.movie
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bezzo.core.base.*
@@ -23,20 +26,19 @@ class MovieFragment : BaseFragment() {
 
     private val viewModel: MovieViewModel by inject()
     private val adapter: MovieRVAdapter by inject()
-    private val list = ArrayList<ResultMovie>()
+    private val list : MutableList<ResultMovie> = ArrayList()
 
     override fun onViewInitialized(savedInstanceState: Bundle?) {
-
+        setHasOptionsMenu(true)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         context?.let {
             val layoutManager = LinearLayoutManager(it)
             rv_movie.layoutManager = layoutManager
             rv_movie.adapter = adapter
-            viewModel.getMovie()
             viewModel.state.observe(this, movies)
+            viewModel.getMovie()
 
             adapter.setOnClick(object : OnItemClickListener{
                 override fun onItemClick(itemView: View, position: Int) {
@@ -82,5 +84,28 @@ class MovieFragment : BaseFragment() {
                 rv_movie.hide()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.search_menu, menu)
+        val mSearchmenuItem = menu.findItem(R.id.nav_search)
+        val searchView = mSearchmenuItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                val listSearch = ArrayList<ResultMovie>()
+                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
+                adapter.setItem(listSearch)
+                adapter.notifyDataSetChanged()
+                return true
+            }
+
+            override fun onQueryTextChange(query: String?): Boolean {
+                val listSearch = ArrayList<ResultMovie>()
+                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
+                adapter.setItem(listSearch)
+                adapter.notifyDataSetChanged()
+                return true
+            }
+        })
     }
 }

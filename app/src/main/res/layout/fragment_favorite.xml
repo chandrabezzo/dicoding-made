@@ -1,23 +1,30 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context="com.bezzo.moviecatalogue.features.movie.MovieFragment">
 
     <ProgressBar
-            android:id="@+id/pb_tv"
+            android:id="@+id/pb_favorite"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_tv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"
-        tools:listitem="@layout/item_rv_movie" />
+            android:id="@+id/rv_favorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:listitem="@layout/item_rv_movie" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/empty_favorite"/>
 
     <com.google.android.material.button.MaterialButton
             android:id="@+id/mb_retry"

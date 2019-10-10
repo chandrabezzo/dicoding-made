@@ -12,7 +12,8 @@ import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.data.model.ResultMovie
 import kotlinx.android.synthetic.main.item_rv_movie.view.*
 
-class MovieRVAdapter constructor(private val context: Context, private val list: ArrayList<ResultMovie>)
+class MovieRVAdapter internal constructor(private val context: Context,
+                                          private val list: MutableList<ResultMovie>)
     : RecyclerView.Adapter<MovieRVAdapter.Item>(){
 
     lateinit var listener: OnItemClickListener
@@ -21,8 +22,10 @@ class MovieRVAdapter constructor(private val context: Context, private val list:
         this.listener = listener
     }
 
+    private val inflater: LayoutInflater = LayoutInflater.from(context)
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Item {
-        return Item(LayoutInflater.from(parent.context).inflate(R.layout.item_rv_movie, parent, false))
+        return Item(inflater.inflate(R.layout.item_rv_movie, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -33,7 +36,7 @@ class MovieRVAdapter constructor(private val context: Context, private val list:
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<ResultMovie>){
+    fun setItem(values: MutableList<ResultMovie>){
         list.clear()
         list.addAll(values)
     }

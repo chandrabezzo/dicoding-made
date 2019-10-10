@@ -1,5 +1,6 @@
 package com.bezzo.moviecatalogue.features.about
 
+import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import com.bezzo.core.base.BaseViewModel
 import com.bezzo.core.base.Receive
@@ -12,9 +13,8 @@ import io.reactivex.disposables.CompositeDisposable
 
 class AboutViewModel(
     sessionHelper: SessionHelper,
-    schedulerProvider: SchedulerProviderUtil,
-    compositeDisposable: CompositeDisposable
-) : BaseViewModel(sessionHelper) {
+    application: Application
+) : BaseViewModel(sessionHelper, application) {
 
     val movieState = MutableLiveData<ViewModelState>()
 

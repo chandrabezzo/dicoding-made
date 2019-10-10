@@ -21,13 +21,15 @@ android {
         debug {
             resValue "string", "app_name", "Movie Catalogue Dev"
             applicationIdSuffix ".dev"
-            useProguard false
         }
         release {
             minifyEnabled true
-            useProguard true
             resValue "string", "app_name", "Movie Catalogue"
         }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
     }
 }
 
@@ -70,8 +72,11 @@ dependencies {
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
 
     // # Dependency Injection
-    implementation "org.koin:koin-android:$rootProject.ext.koinVersion"
-    implementation "org.koin:koin-android-viewmodel:$rootProject.ext.koinVersion"
+    implementation "org.koin:koin-androidx-scope:$rootProject.ext.koinVersion"
+    implementation "org.koin:koin-androidx-viewmodel:$rootProject.ext.koinVersion"
+    implementation "org.koin:koin-androidx-ext:$rootProject.ext.koinVersion"
+//    implementation "org.koin:koin-android:$rootProject.ext.koinVersion"
+//    implementation "org.koin:koin-android-viewmodel:$rootProject.ext.koinVersion"
 
     // # Logger
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
@@ -79,6 +84,25 @@ dependencies {
     // # Local Unit Test
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+
+    // # Local Storage
+    // Room components
+    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
+    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
+    kapt "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
+    androidTestImplementation "androidx.arch.core:core-testing:$rootProject.androidxArchVersion"
+
+    // ViewModel Kotlin support
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.archLifecycleVersion"
+
+    // Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
 
     // # UI Testing
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"

@@ -1,5 +1,7 @@
 package com.bezzo.core.base
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.androidnetworking.error.ANError
@@ -17,10 +19,13 @@ import java.util.concurrent.Executors
  */
 
 open class BaseViewModel(
-    private val sessionHelper: SessionHelper
-) : ViewModel(), BaseViewModelContract {
+    private val sessionHelper: SessionHelper,
+    application: Application
+) : AndroidViewModel(application), BaseViewModelContract {
 
     val state = MutableLiveData<ViewModelState>()
+    val session = sessionHelper
+    val app = application
 
     override fun handleApiError(error: ANError): String {
         var message = ""

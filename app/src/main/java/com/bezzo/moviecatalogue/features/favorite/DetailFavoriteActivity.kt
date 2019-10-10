@@ -1,4 +1,4 @@
-package com.bezzo.moviecatalogue.features.detailMovie
+package com.bezzo.moviecatalogue.features.favorite
 
 import android.os.Bundle
 import androidx.lifecycle.Observer
@@ -11,47 +11,42 @@ import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.constanta.AppConstant
 import com.bezzo.moviecatalogue.data.model.Favorite
-import com.bezzo.moviecatalogue.data.model.ResultMovie
-import com.bezzo.moviecatalogue.features.favorite.FavoriteViewModel
-import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.activity_detail.iv_banner
+import kotlinx.android.synthetic.main.activity_detail.tv_desc
+import kotlinx.android.synthetic.main.activity_detail.tv_popularity
+import kotlinx.android.synthetic.main.activity_detail.tv_release_date
+import kotlinx.android.synthetic.main.activity_detail.tv_title
+import kotlinx.android.synthetic.main.activity_detail.tv_user_score
+import kotlinx.android.synthetic.main.activity_detail_favorite.*
 import org.koin.android.ext.android.inject
 
-class DetailMovieActivity : BaseActivity() {
+class DetailFavoriteActivity : BaseActivity() {
 
-    lateinit var data: ResultMovie
+    lateinit var data: Favorite
     private val viewModel: FavoriteViewModel by inject()
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
-        dataReceived?.getParcelable<ResultMovie>(AppConstant.DATA_MOVIE)?.let {
+        dataReceived?.getParcelable<Favorite>(AppConstant.DATA_FAVORITE)?.let {
             data = it
         }
 
         viewModel.state.observe(this, favorite)
 
-        val image = "https://image.tmdb.org/t/p/w185/${data.posterPath}"
-        GlideApp.with(this).load(image).into(iv_banner)
+        GlideApp.with(this).load(data.image).into(iv_banner)
         tv_title.text = data.title
         tv_release_date.text = data.releaseDate
-        tv_user_score.text = data.voteAverage.toString()
-        tv_desc.text = data.overview
+        tv_user_score.text = data.userScore.toString()
+        tv_desc.text = data.desc
         tv_popularity.text = data.popularity.toString()
 
-        ib_favorite.setOnClickListener {
-            val favorite = Favorite(
-                data.id,
-                image,
-                data.title,
-                data.releaseDate,
-                data.voteAverage,
-                data.popularity,
-                data.overview
-            )
-            viewModel.addFavorite(favorite)
+        ib_remove.setOnClickListener {
+            viewModel.remove(data.id)
+            finish()
         }
     }
 
     override fun setLayout(): Int {
-        return R.layout.activity_detail
+        return R.layout.activity_detail_favorite
     }
 
     private val favorite = Observer<ViewModelState> {

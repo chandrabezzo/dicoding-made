@@ -1,12 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d2bcdfd9-e647-4b89-89b3-e8aff1eefab2" name="Default Changelist" comment="" />
+    <list default="true" id="62013990-5193-4b9b-b1be-18311c9f9177" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/adapter/FavoriteRvAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/local/LocalStorage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/local/converter/ListIntConverter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/local/converter/ListStringConverter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/local/dao/FavoriteDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/local/dao/MovieDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/local/dao/TvShowDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/model/Favorite.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/FavoriteRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/MovieRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/TvShowRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/favorite/DetailFavoriteActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/favorite/FavoriteFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/favorite/FavoriteViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_favorite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_favorite_border.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_people.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_remove.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/drawable/ic_star.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_detail_favorite.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/src/main/res/layout/fragment_favorite.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/adapter/MovieRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/adapter/MovieRVAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/adapter/TvShowRVAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/adapter/TvShowRVAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/constanta/AppConstant.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/constanta/AppConstant.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/model/Movie.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/model/Movie.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/model/TvShow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/model/TvShow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/ApiCallback.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bezzo/core/data/network/ApiCallback.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/ApiEndpoint.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/ApiEndpoint.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/data/network/ApiHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/di/AppModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/about/AboutViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/about/AboutViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/detailMovie/DetailMovieActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/detailMovie/DetailMovieActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/detailTv/DetailTvActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/detailTv/DetailTvActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/movie/MovieFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/movie/MovieFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/movie/MovieViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/movie/MovieViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/tvShow/TvShowViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/java/com/bezzo/moviecatalogue/features/tvShow/TvShowViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_detail.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_detail_tv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_detail_tv.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/menu/main_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/menu/main_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values-in/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values-in/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bezzo/core/base/BaseViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bezzo/core/base/BaseViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bezzo/core/base/ViewModelState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bezzo/core/base/ViewModelState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle.properties" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
   </component>
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
@@ -15,31 +75,14 @@
       </state>
     </system>
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1991487427">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="852" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="74" />
+    <option name="y" value="-768" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -47,15 +90,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunDashboard">
@@ -72,54 +115,38 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d2bcdfd9-e647-4b89-89b3-e8aff1eefab2" name="Default Changelist" comment="" />
-      <created>1549680149941</created>
+      <changelist id="62013990-5193-4b9b-b1be-18311c9f9177" name="Default Changelist" comment="" />
+      <created>1569556903092</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1549680149941</updated>
+      <updated>1569556903092</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="852" extended-state="6" />
+    <frame x="74" y="-768" width="1366" height="768" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" visible="true" weight="0.3295129" />
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32930514" />
       <window_info id="Structure" side_tool="true" />
       <window_info id="Build Variants" side_tool="true" />
       <window_info id="Image Layers" />
       <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="TODO" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Build" visible="true" weight="0.32894737" />
+      <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
+      <window_info anchor="bottom" id="Build" visible="true" weight="0.3295129" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Gradle" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Android WiFi ADB" />
+      <window_info anchor="right" id="Flutter Inspector" />
+      <window_info anchor="right" id="Flutter Outline" />
       <window_info anchor="right" id="Palette&#9;" />
     </layout>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

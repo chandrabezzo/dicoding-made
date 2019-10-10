@@ -27,11 +27,11 @@
         android:layout_below="@id/toolbar"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bnv_main"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:labelVisibilityMode="labeled"
-            app:menu="@menu/main_menu"
-            style="@style/Widget.MaterialComponents.BottomNavigationView"/>
+        android:id="@+id/bnv_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/main_menu"
+        style="@style/Widget.MaterialComponents.BottomNavigationView"/>
 </RelativeLayout>

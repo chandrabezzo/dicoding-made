@@ -44,7 +44,7 @@
             tools:text="2018" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_favorite"
+            android:id="@+id/ib_remove"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="?attr/selectableItemBackground"
@@ -54,7 +54,7 @@
             app:layout_constraintBottom_toTopOf="@id/line"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp"
-            app:srcCompat="@drawable/ic_favorite" />
+            app:srcCompat="@drawable/ic_remove" />
 
     <View
             android:id="@+id/line"
@@ -161,5 +161,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="An Amazon princess comes to the world of Man to become the greatest of the female superheroes." />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

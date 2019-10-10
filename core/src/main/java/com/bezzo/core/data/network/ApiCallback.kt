@@ -1,4 +1,4 @@
-package com.bezzo.moviecatalogue.data.network
+package com.bezzo.core.data.network
 
 import com.androidnetworking.error.ANError
 

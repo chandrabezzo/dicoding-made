@@ -9,13 +9,12 @@ import com.bezzo.core.base.BaseHolder
 import com.bezzo.core.listener.OnItemClickListener
 import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
-import com.bezzo.moviecatalogue.data.model.ResultMovie
-import com.bezzo.moviecatalogue.data.model.ResultTvShow
+import com.bezzo.moviecatalogue.data.model.Favorite
 import kotlinx.android.synthetic.main.item_rv_movie.view.*
 
-class TvShowRVAdapter internal constructor(private val context: Context,
-                                           private val list: ArrayList<ResultTvShow>)
-    : RecyclerView.Adapter<TvShowRVAdapter.Item>(){
+class FavoriteRvAdapter internal constructor(private val context: Context,
+                                             private val list: MutableList<Favorite>)
+    : RecyclerView.Adapter<FavoriteRvAdapter.Item>(){
 
     lateinit var listener: OnItemClickListener
 
@@ -37,22 +36,22 @@ class TvShowRVAdapter internal constructor(private val context: Context,
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<ResultTvShow>){
+    fun setItem(values: MutableList<Favorite>){
         list.clear()
         list.addAll(values)
     }
 
-    inner class Item(itemView: View): BaseHolder<ResultTvShow>(itemView){
+    inner class Item(itemView: View): BaseHolder<Favorite>(itemView){
 
         init {
             itemView.setOnClickListener { listener.onItemClick(it, layoutPosition) }
         }
 
-        override fun setContent(model: ResultTvShow) {
-            itemView.tv_judul.text = String.format(context.getString(R.string.judul_name), model.name, model.firstAirDate)
-            itemView.tv_desc.text = "${model.voteAverage}"
-            val image = "https://image.tmdb.org/t/p/w185/${model.posterPath}"
-            GlideApp.with(context).load(image).into(itemView.iv_profile)
+        override fun setContent(model: Favorite) {
+            itemView.tv_judul.text = String.format(context.getString(R.string.judul_name),
+                model.title, model.releaseDate)
+            itemView.tv_desc.text = "${model.userScore}"
+            GlideApp.with(context).load(model.image).into(itemView.iv_profile)
         }
     }
 }

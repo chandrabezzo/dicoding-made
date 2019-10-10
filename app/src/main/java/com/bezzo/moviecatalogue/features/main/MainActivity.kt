@@ -8,6 +8,7 @@ import com.bezzo.core.base.BaseActivity
 import com.bezzo.core.extension.launchFragment
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.features.about.AboutFragment
+import com.bezzo.moviecatalogue.features.favorite.FavoriteFragment
 import com.bezzo.moviecatalogue.features.film.FilmFragment
 import com.bezzo.moviecatalogue.features.setting.SettingActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -28,6 +29,7 @@ class MainActivity : BaseActivity() {
         bnv_main.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.nav_movie -> launchFragment(R.id.fl_main, FilmFragment::class.java)
+                R.id.nav_favorite -> launchFragment(R.id.fl_main, FavoriteFragment::class.java)
                 R.id.nav_about -> launchFragment(R.id.fl_main, AboutFragment::class.java)
             }
 
@@ -39,21 +41,21 @@ class MainActivity : BaseActivity() {
         return R.layout.activity_main
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.setting_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        when(item?.itemId){
-            R.id.nav_setting -> {
-                val intent = Intent(this, SettingActivity::class.java)
-                startActivityForResult(intent, 0)
-            }
-        }
-
-        return true
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.setting_menu, menu)
+//        return true
+//    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+//        when(item?.itemId){
+//            R.id.nav_setting -> {
+//                val intent = Intent(this, SettingActivity::class.java)
+//                startActivityForResult(intent, 0)
+//            }
+//        }
+//
+//        return true
+//    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
