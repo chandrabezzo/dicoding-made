@@ -11,7 +11,18 @@
             android:roundIcon="@drawable/icon"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".features.favorite.DetailFavoriteActivity"></activity>
+
+        <receiver android:name=".widget.FavoriteWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                    android:name="android.appwidget.provider"
+                    android:resource="@xml/favorite_widget_info" />
+        </receiver>
+
+        <activity android:name=".features.favorite.DetailFavoriteActivity" />
         <activity android:name=".features.detailTv.DetailTvActivity" />
         <activity
                 android:name=".features.setting.SettingActivity"
@@ -30,27 +41,18 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".widget.FavoriteWidget">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
-            </intent-filter>
-
-            <meta-data
-                    android:name="android.appwidget.provider"
-                    android:resource="@xml/favorite_widget_info"/>
-        </receiver>
-
-        <service android:name=".widget.StackWidgetService"
-                android:permission="android.permission.BIND_REMOTEVIEWS"/>
-
         <receiver
                 android:name=".util.DailyAlarmReceiver"
                 android:enabled="true"
-                android:exported="true"/>
+                android:exported="true" />
         <receiver
                 android:name=".util.ReleaseAlarmReceiver"
                 android:enabled="true"
-                android:exported="true"/>
+                android:exported="true" />
+
+        <service
+                android:name=".widget.FavoriteStackWidgetService"
+                android:permission="android.permission.BIND_REMOTEVIEWS"/>
     </application>
 
 </manifest>

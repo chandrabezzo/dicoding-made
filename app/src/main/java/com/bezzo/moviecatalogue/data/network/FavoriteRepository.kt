@@ -9,6 +9,10 @@ class FavoriteRepository(private val favoriteDao: FavoriteDao) {
         return favoriteDao.getAll()
     }
 
+    fun allFavorite(): MutableList<Favorite> {
+        return favoriteDao.getFavorites()
+    }
+
     suspend fun insert(favorite: Favorite) {
         favoriteDao.insert(favorite)
     }

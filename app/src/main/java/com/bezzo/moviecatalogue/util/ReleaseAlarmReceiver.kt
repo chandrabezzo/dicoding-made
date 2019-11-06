@@ -48,7 +48,7 @@ class ReleaseAlarmReceiver: BroadcastReceiver() {
         val calendar = Calendar.getInstance()
         val today = "${calendar.get(Calendar.YEAR)}-${calendar.get(Calendar.MONTH)}-${calendar.get(
             Calendar.DAY_OF_MONTH)}"
-        val url = "${ApiEndpoint.RELEASE}&primary_release_date.gte=2019-01-31&primary_release_date.lte=2019-01-31"
+        val url = "${ApiEndpoint.RELEASE}&primary_release_date.gte=$today&primary_release_date.lte=$today"
         RestApi.get(url, null, null, null)
             .getAsObject(Movie::class.java, object : ParsedRequestListener<Movie> {
                 override fun onResponse(response: Movie) {

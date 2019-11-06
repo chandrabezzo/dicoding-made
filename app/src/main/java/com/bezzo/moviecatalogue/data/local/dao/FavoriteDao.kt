@@ -12,6 +12,9 @@ interface FavoriteDao {
     @Query("SELECT * FROM ${AppConstant.FAVORITE}")
     suspend fun getAll(): MutableList<Favorite>
 
+    @Query("SELECT * FROM ${AppConstant.FAVORITE}")
+    fun getFavorites(): MutableList<Favorite>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(favorite: Favorite)
 

@@ -51,6 +51,22 @@ abstract class LocalStorage: RoomDatabase() {
                 instance
             }
         }
+
+        fun getDatabase(
+            context: Context
+        ): LocalStorage {
+            return INSTANCE ?: synchronized(this){
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    LocalStorage::class.java,
+                    "movie_database"
+                ).fallbackToDestructiveMigration()
+                    .build()
+
+                INSTANCE = instance
+                instance
+            }
+        }
     }
 
     private class LocalStorageCallback(
