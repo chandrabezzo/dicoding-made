@@ -23,5 +23,15 @@
     <string name="judul_name">%1$s (%2$s)</string>
     <string name="name">Nama</string>
     <string name="search">Cari</string>
+    <string name="other">Other</string>
+    <string name="daily_notif_active">Notifikasi harian diaktifkan</string>
+    <string name="daily_notif_disable">Notifikasi harian diberhentikan</string>
+    <string name="release_notif_active">Notifikasi rilis active</string>
+    <string name="release_notif_disable">Notifikasi rilis disable</string>
+    <string name="daily_notif">Notifikasi Harian</string>
+    <string name="release_notif">Notifikasi Rilis</string>
+    <string name="bahasa">Bahasa</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="now_release">Sekarang Rilis !</string>
     <!-- TODO: Remove or change this placeholder text -->
 </resources>

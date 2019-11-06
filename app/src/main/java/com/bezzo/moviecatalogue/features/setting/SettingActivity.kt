@@ -3,8 +3,12 @@ package com.bezzo.moviecatalogue.features.setting
 import android.app.Activity
 import android.os.Bundle
 import com.bezzo.core.base.BaseActivity
+import com.bezzo.core.data.session.SessionConstants
+import com.bezzo.core.data.session.SessionHelper
 import com.bezzo.core.util.LocaleUtil
 import com.bezzo.moviecatalogue.R
+import com.bezzo.moviecatalogue.util.DailyAlarmReceiver
+import com.bezzo.moviecatalogue.util.ReleaseAlarmReceiver
 import kotlinx.android.synthetic.main.activity_setting.*
 import org.koin.android.ext.android.inject
 
@@ -18,6 +22,9 @@ class SettingActivity : BaseActivity() {
         toolbar.setNavigationOnClickListener {
             onNavigationClick()
         }
+
+        val dailyReminder = DailyAlarmReceiver()
+        val releaseReminder = ReleaseAlarmReceiver()
 
         if(LocaleUtil.getLanguage(this) == "en"){
             rb_indonesia.isChecked = false
@@ -45,6 +52,31 @@ class SettingActivity : BaseActivity() {
                 LocaleUtil.setLocale(this, "in")
             }
         }
+
+        sc_daily.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                dailyReminder.setAlarm(this, getString(R.string.daily_notif))
+                SessionHelper().addSession(SessionConstants.DAILY, true)
+            }
+            else {
+                dailyReminder.cancelAlarm(this)
+                SessionHelper().addSession(SessionConstants.DAILY, false)
+            }
+        }
+
+        sc_release.setOnCheckedChangeListener { _, isChecked ->
+            if(isChecked){
+                releaseReminder.setAlarm(this, getString(R.string.release_notif))
+                SessionHelper().addSession(SessionConstants.RELEASE, true)
+            }
+            else {
+                releaseReminder.cancelAlarm(this)
+                SessionHelper().addSession(SessionConstants.RELEASE, false)
+            }
+        }
+
+        sc_daily.isChecked = SessionHelper().getSession(SessionConstants.DAILY, false) != false
+        sc_release.isChecked = SessionHelper().getSession(SessionConstants.RELEASE, false) != false
     }
 
     override fun setLayout(): Int {

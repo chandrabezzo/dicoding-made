@@ -90,20 +90,25 @@ class MovieFragment : BaseFragment() {
         inflater.inflate(R.menu.search_menu, menu)
         val mSearchmenuItem = menu.findItem(R.id.nav_search)
         val searchView = mSearchmenuItem.actionView as SearchView
+        searchView.queryHint = getString(R.string.name)
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
-                val listSearch = ArrayList<ResultMovie>()
-                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
-                adapter.setItem(listSearch)
-                adapter.notifyDataSetChanged()
+                if(query?.isEmpty() == true){
+                    viewModel.getMovie()
+                }
+                else {
+                    viewModel.searchMovie(query)
+                }
                 return true
             }
 
             override fun onQueryTextChange(query: String?): Boolean {
-                val listSearch = ArrayList<ResultMovie>()
-                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
-                adapter.setItem(listSearch)
-                adapter.notifyDataSetChanged()
+                if(query?.isEmpty() == true){
+                    viewModel.getMovie()
+                }
+                else {
+                    viewModel.searchMovie(query)
+                }
                 return true
             }
         })

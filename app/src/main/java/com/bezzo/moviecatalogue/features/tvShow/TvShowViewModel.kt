@@ -59,4 +59,22 @@ class TvShowViewModel(
             }
         })
     }
+
+    fun searchTv(query: String?){
+        state.postValue(Loading)
+        tvShowRepository.searchTvShow(query, object : ApiCallback<TvShow>{
+            override fun onResponse(data: TvShow) {
+                if(data.results.isEmpty()){
+                    state.postValue(Empty)
+                }
+                else {
+                    state.postValue(Receive(data.results))
+                }
+            }
+
+            override fun onFailed(error: ANError) {
+                state.postValue(Error(handleApiError(error)))
+            }
+        })
+    }
 }

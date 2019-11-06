@@ -23,6 +23,16 @@
     <string name="judul_name">%1$s (%2$s)</string>
     <string name="name">Name</string>
     <string name="search">Search</string>
+    <string name="other">Other</string>
+    <string name="daily_notif_active">Daily notification active</string>
+    <string name="daily_notif_disable">Daily notification disable</string>
+    <string name="release_notif_active">Release notification active</string>
+    <string name="release_notif_disable">Release notification disable</string>
+    <string name="daily_notif">Daily Notification</string>
+    <string name="release_notif">Release Notification</string>
+    <string name="bahasa">Language</string>
+    <string name="notifikasi">Notification</string>
+    <string name="now_release">Now Release !</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

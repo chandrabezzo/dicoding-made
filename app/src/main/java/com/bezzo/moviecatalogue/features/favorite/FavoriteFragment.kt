@@ -17,6 +17,7 @@ import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.adapter.FavoriteRvAdapter
 import com.bezzo.moviecatalogue.constanta.AppConstant
 import com.bezzo.moviecatalogue.data.model.Favorite
+import com.bezzo.moviecatalogue.features.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.android.ext.android.inject
 
@@ -27,7 +28,7 @@ import org.koin.android.ext.android.inject
     private val list : MutableList<Favorite> = ArrayList()
 
     override fun onViewInitialized(savedInstanceState: Bundle?) {
-        setHasOptionsMenu(true)
+
     }
 
     override fun onResume() {
@@ -89,28 +90,5 @@ import org.koin.android.ext.android.inject
                 tv_empty.show()
             }
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.search_menu, menu)
-        val mSearchmenuItem = menu.findItem(R.id.nav_search)
-        val searchView = mSearchmenuItem.actionView as SearchView
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                val listSearch = ArrayList<Favorite>()
-                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
-                adapter.setItem(listSearch)
-                adapter.notifyDataSetChanged()
-                return true
-            }
-
-            override fun onQueryTextChange(query: String?): Boolean {
-                val listSearch = ArrayList<Favorite>()
-                listSearch.addAll(list.filter { it.title.contains(query.toString()) })
-                adapter.setItem(listSearch)
-                adapter.notifyDataSetChanged()
-                return true
-            }
-        })
     }
 }

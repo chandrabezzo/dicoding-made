@@ -1,13 +1,17 @@
 package com.bezzo.moviecatalogue.features.about
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import android.view.View
 import androidx.lifecycle.Observer
 import com.bezzo.core.base.BaseFragment
 import com.bezzo.core.base.Receive
 import com.bezzo.core.base.ViewModelState
+import com.bezzo.core.extension.launchActivity
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.data.model.Profile
+import com.bezzo.moviecatalogue.features.setting.SettingActivity
 import kotlinx.android.synthetic.main.fragment_about.*
 import org.koin.android.ext.android.inject
 
@@ -24,6 +28,8 @@ class AboutFragment : BaseFragment() {
 
         viewModel.getProfile()
         viewModel.movieState.observe(this, profile)
+
+        cv_setting.setOnClickListener { launchActivity<SettingActivity>() }
     }
 
     override fun setLayout(): Int {

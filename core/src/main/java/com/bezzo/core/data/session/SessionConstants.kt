@@ -10,4 +10,6 @@ object SessionConstants {
     val NO_PHONE = "NoPhone"
     val LATITUDE = "latitude"
     val LONGITUDE = "longitude"
+    val DAILY = "daily"
+    val RELEASE = "release"
 }

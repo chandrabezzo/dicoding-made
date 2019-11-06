@@ -17,13 +17,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : BaseActivity() {
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
-        setSupportActionBar(toolbar)
-        mActionBar = supportActionBar
-        setActionBarTitle(getString(R.string.app_name))
-        toolbar.setNavigationOnClickListener {
-            onNavigationClick()
-        }
-
         launchFragment(R.id.fl_main, FilmFragment::class.java)
 
         bnv_main.setOnNavigationItemSelectedListener {

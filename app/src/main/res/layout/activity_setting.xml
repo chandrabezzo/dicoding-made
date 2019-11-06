@@ -19,9 +19,19 @@
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="@string/app_name"/>
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/bahasa"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"/>
+
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
 
         <RadioButton
             android:id="@+id/rb_indonesia"
@@ -35,4 +45,43 @@
             android:layout_height="wrap_content"
             android:text="@string/english"/>
     </RadioGroup>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black_effective"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/notifikasi"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sc_daily"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/daily_notif"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:switchPadding="16dp"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sc_release"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/release_notif"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        app:switchPadding="16dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/black_effective"/>
 </LinearLayout>

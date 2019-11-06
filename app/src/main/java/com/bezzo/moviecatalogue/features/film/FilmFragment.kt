@@ -6,6 +6,7 @@ import android.view.View
 import com.bezzo.core.base.BaseFragment
 import com.bezzo.core.extension.launchFragment
 import com.bezzo.moviecatalogue.R
+import com.bezzo.moviecatalogue.features.main.MainActivity
 import com.bezzo.moviecatalogue.features.movie.MovieFragment
 import com.bezzo.moviecatalogue.features.tvShow.TvShowFragment
 import com.google.android.material.tabs.TabLayout
@@ -20,6 +21,14 @@ class FilmFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val parent = (activity as MainActivity)
+        parent.setSupportActionBar(toolbar)
+        parent.mActionBar = parent.supportActionBar
+        parent.setActionBarTitle(getString(R.string.app_name))
+        toolbar.setNavigationOnClickListener {
+            parent.onNavigationClick()
+        }
 
         launchFragment(R.id.fl_movie, MovieFragment::class.java)
 

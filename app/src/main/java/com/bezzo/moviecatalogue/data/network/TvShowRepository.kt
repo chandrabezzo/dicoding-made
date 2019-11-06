@@ -38,4 +38,20 @@ class TvShowRepository(private val tvShowDao: TvShowDao) {
                 }
             })
     }
+
+    fun searchTvShow(query: String?, callback: ApiCallback<TvShow>){
+        val params = HashMap<String, String>()
+        query?.let { params["query"] = query }
+
+        RestApi.get(ApiEndpoint.SEARCH_TV_SHOW, params, null, null)
+            .getAsObject(TvShow::class.java, object : ParsedRequestListener<TvShow>{
+                override fun onResponse(response: TvShow) {
+                    callback.onResponse(response)
+                }
+
+                override fun onError(anError: ANError) {
+                    callback.onFailed(anError)
+                }
+            })
+    }
 }

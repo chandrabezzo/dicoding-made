@@ -59,4 +59,22 @@ class MovieViewModel(
             }
         })
     }
+
+    fun searchMovie(query: String?){
+        state.postValue(Loading)
+        movieRepository.searchMovie(query, object : ApiCallback<Movie>{
+            override fun onResponse(data: Movie) {
+                if(data.results.isEmpty()){
+                    state.postValue(Empty)
+                }
+                else {
+                    state.postValue(Receive(data.results))
+                }
+            }
+
+            override fun onFailed(error: ANError) {
+                state.postValue(Error(handleApiError(error)))
+            }
+        })
+    }
 }

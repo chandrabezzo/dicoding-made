@@ -13,10 +13,12 @@
         android:maxHeight="?android:attr/actionBarSize"
         android:fitsSystemWindows="true"
         android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
         android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="@string/about"/>
+        app:title="@string/app_name"/>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cv_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -55,6 +57,41 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 style="@style/TextEmailStyle"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_profile"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/setting"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="16dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="8dp"
+                android:src="@drawable/ic_chevron_right_white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
