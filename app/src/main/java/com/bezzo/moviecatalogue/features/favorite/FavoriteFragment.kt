@@ -1,11 +1,8 @@
- package com.bezzo.moviecatalogue.features.favorite
+package com.bezzo.moviecatalogue.features.favorite
 
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
 import android.view.View
-import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bezzo.core.base.*
@@ -17,7 +14,7 @@ import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.adapter.FavoriteRvAdapter
 import com.bezzo.moviecatalogue.constanta.AppConstant
 import com.bezzo.moviecatalogue.data.model.Favorite
-import com.bezzo.moviecatalogue.features.main.MainActivity
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.android.ext.android.inject
 
@@ -49,7 +46,7 @@ import org.koin.android.ext.android.inject
             adapter.setOnClick(object : OnItemClickListener {
                 override fun onItemClick(itemView: View, position: Int) {
                     launchActivity<DetailFavoriteActivity>{
-                        putExtra(AppConstant.DATA_FAVORITE, list[position])
+                        putExtra(AppConstant.DATA_FAVORITE, Gson().toJson(list[position]))
                     }
                 }
 

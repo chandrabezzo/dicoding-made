@@ -1,7 +1,6 @@
 package com.bezzo.moviecatalogue.features.favorite
 
 import android.app.Application
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.bezzo.core.base.BaseViewModel
 import com.bezzo.core.base.Empty

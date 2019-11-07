@@ -35,4 +35,8 @@ val rvAdapterModule = module {
     factory { FavoriteRvAdapter(androidContext(), ArrayList()) }
 }
 
-val allModule = listOf(appModule, viewModelModule, rvAdapterModule)
+val allModule = listOf(
+    appModule,
+    viewModelModule,
+    rvAdapterModule
+)

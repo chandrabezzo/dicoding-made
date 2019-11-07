@@ -37,15 +37,14 @@ class DetailMovieActivity : BaseActivity() {
         tv_popularity.text = data.popularity.toString()
 
         ib_favorite.setOnClickListener {
-            val favorite = Favorite(
-                data.id,
-                image,
-                data.title,
-                data.releaseDate,
-                data.voteAverage,
-                data.popularity,
-                data.overview
-            )
+            val favorite = Favorite()
+            favorite.id = data.id
+            favorite.image = image
+            favorite.title = data.title
+            favorite.releaseDate = data.releaseDate
+            favorite.userScore = data.voteAverage
+            favorite.popularity = data.popularity
+            favorite.desc = data.overview
             viewModel.addFavorite(favorite)
         }
     }

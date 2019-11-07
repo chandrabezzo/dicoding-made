@@ -1,5 +1,6 @@
 package com.bezzo.moviecatalogue.data.local.dao
 
+import android.database.Cursor
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -26,4 +27,19 @@ interface FavoriteDao {
 
     @Query("DELETE FROM ${AppConstant.FAVORITE} WHERE id=:id")
     suspend fun delete(id: Int)
+
+    @Query("SELECT * FROM ${AppConstant.FAVORITE}")
+    fun allFavorites(): Cursor
+
+    @Query("SELECT * FROM ${AppConstant.FAVORITE} WHERE id=:id")
+    fun getFavorite(id: Int): Cursor
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun add(favorite: Favorite): Long
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun inserts(favorite: Array<Favorite>): Array<Long>
+
+    @Query("DELETE FROM ${AppConstant.FAVORITE} WHERE id=:id")
+    fun deleteById(id: Int): Int
 }

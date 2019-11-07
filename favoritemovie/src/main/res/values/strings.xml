@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FavoriteMovie</string>
+    <string name="empty_favorite">Empty Favorite</string>
+    <string name="retry">Retry</string>
+    <string name="judul_name">%1$s (%2$s)</string>
+    <string name="berhasil_ditambahkan_favorite">Added Favorite Success</string>
+    <string name="berhasil_dihapus_favorite">Remove from favorite Success</string>
+    <string name="user_score">User Score</string>
+    <string name="judul">Title</string>
+    <string name="deskripsi">Description</string>
+    <string name="popularity">Popularity</string>
+    <string name="genre">Genre</string>
+</resources>

@@ -11,6 +11,7 @@ import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.constanta.AppConstant
 import com.bezzo.moviecatalogue.data.model.Favorite
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_detail.iv_banner
 import kotlinx.android.synthetic.main.activity_detail.tv_desc
 import kotlinx.android.synthetic.main.activity_detail.tv_popularity
@@ -26,9 +27,8 @@ class DetailFavoriteActivity : BaseActivity() {
     private val viewModel: FavoriteViewModel by inject()
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
-        dataReceived?.getParcelable<Favorite>(AppConstant.DATA_FAVORITE)?.let {
-            data = it
-        }
+        data = Gson().fromJson<Favorite>(dataReceived?.getString(AppConstant.DATA_FAVORITE),
+            Favorite::class.java)
 
         viewModel.state.observe(this, favorite)
 
@@ -40,7 +40,9 @@ class DetailFavoriteActivity : BaseActivity() {
         tv_popularity.text = data.popularity.toString()
 
         ib_remove.setOnClickListener {
-            viewModel.remove(data.id)
+            data.id?.let {
+                viewModel.remove(it)
+            }
             finish()
         }
     }

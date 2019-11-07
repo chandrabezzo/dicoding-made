@@ -1,13 +1,11 @@
 package com.bezzo.moviecatalogue.data.local
 
 import android.content.Context
-import android.net.Uri
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
-import com.bezzo.moviecatalogue.constanta.AppConstant
 import com.bezzo.moviecatalogue.data.local.converter.ListIntConverter
 import com.bezzo.moviecatalogue.data.local.converter.ListStringConverter
 import com.bezzo.moviecatalogue.data.local.dao.FavoriteDao

@@ -236,7 +236,6 @@ class CircleImageView : ImageView {
         if (drawable is BitmapDrawable) {
             return drawable.bitmap
         }
-
         try {
             val bitmap: Bitmap
 
