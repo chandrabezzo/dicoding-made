@@ -10,9 +10,11 @@ import androidx.loader.content.Loader
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bezzo.core.base.BaseActivity
 import com.bezzo.core.extension.hide
+import com.bezzo.core.extension.launchActivity
 import com.bezzo.core.extension.show
 import com.bezzo.core.extension.toast
 import com.bezzo.core.listener.OnItemClickListener
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity(), LoaderManager.LoaderCallbacks<Cursor> {
@@ -34,9 +36,9 @@ class MainActivity : BaseActivity(), LoaderManager.LoaderCallbacks<Cursor> {
 
         adapter.setOnClick(object : OnItemClickListener {
             override fun onItemClick(itemView: View, position: Int) {
-//                launchActivity<DetailFavoriteActivity>{
-//                    putExtra(AppConstant.DATA_FAVORITE, list[position])
-//                }
+                launchActivity<DetailFavoriteActivity>{
+                    putExtra(AppConstant.DATA_FAVORITE, Gson().toJson(list[position]))
+                }
             }
 
             override fun onItemLongClick(itemView: View, position: Int): Boolean {
