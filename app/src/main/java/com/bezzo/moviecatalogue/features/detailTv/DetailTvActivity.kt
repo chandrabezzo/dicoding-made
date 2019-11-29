@@ -5,15 +5,15 @@ import com.bezzo.core.base.BaseActivity
 import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.constanta.AppConstant
-import com.bezzo.moviecatalogue.data.model.TvShow
+import com.bezzo.moviecatalogue.data.model.ResultTvShow
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailTvActivity : BaseActivity() {
 
-    lateinit var data: TvShow
+    lateinit var data: ResultTvShow
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
-        dataReceived?.getParcelable<TvShow>(AppConstant.DATA_TV)?.let {
+        dataReceived?.getParcelable<ResultTvShow>(AppConstant.DATA_TV)?.let {
             data = it
         }
 

@@ -5,8 +5,23 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Parcelize
 data class Movie(
+    @SerializedName("page")
+    @Expose
+    val page: Int,
+    @SerializedName("total_results")
+    @Expose
+    val totalResults: Int,
+    @SerializedName("total_pages")
+    @Expose
+    val totalPages: Int,
+    @SerializedName("results")
+    @Expose
+    val results: MutableList<ResultMovie>
+)
+
+@Parcelize
+data class ResultMovie(
     @SerializedName("popularity")
     @Expose
     val popularity: Double,
@@ -34,6 +49,9 @@ data class Movie(
     @SerializedName("original_title")
     @Expose
     val originalTitle: String,
+    @SerializedName("genre_ids")
+    @Expose
+    val genreIds: List<Int>,
     @SerializedName("title")
     @Expose
     val title: String,

@@ -6,17 +6,38 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.RawValue
 
-@Parcelize
 data class TvShow(
+    @SerializedName("page")
+    @Expose
+    var page: Int,
+    @SerializedName("total_results")
+    @Expose
+    var totalResults: Int,
+    @SerializedName("total_pages")
+    @Expose
+    var totalPages: Int,
+    @SerializedName("results")
+    @Expose
+    var results: @RawValue List<ResultTvShow>
+)
+
+@Parcelize
+data class ResultTvShow(
     @SerializedName("original_name")
     @Expose
     var originalName: String,
+    @SerializedName("genre_ids")
+    @Expose
+    var genreIds: List<Int>,
     @SerializedName("name")
     @Expose
     var name: String,
     @SerializedName("popularity")
     @Expose
     var popularity: Double,
+    @SerializedName("origin_country")
+    @Expose
+    var originCountry: List<String>,
     @SerializedName("vote_count")
     @Expose
     var voteCount: Int,

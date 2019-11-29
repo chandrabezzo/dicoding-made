@@ -5,15 +5,15 @@ import com.bezzo.core.base.BaseActivity
 import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
 import com.bezzo.moviecatalogue.constanta.AppConstant
-import com.bezzo.moviecatalogue.data.model.Movie
+import com.bezzo.moviecatalogue.data.model.ResultMovie
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailMovieActivity : BaseActivity() {
 
-    lateinit var data: Movie
+    lateinit var data: ResultMovie
 
     override fun onInitializedView(savedInstanceState: Bundle?) {
-        dataReceived?.getParcelable<Movie>(AppConstant.DATA_MOVIE)?.let {
+        dataReceived?.getParcelable<ResultMovie>(AppConstant.DATA_MOVIE)?.let {
             data = it
         }
 
