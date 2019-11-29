@@ -72,6 +72,7 @@ dependencies {
     // # Dependency Injection
     implementation "org.koin:koin-android:$rootProject.ext.koinVersion"
     implementation "org.koin:koin-android-viewmodel:$rootProject.ext.koinVersion"
+    testImplementation "org.koin:koin-test:$rootProject.ext.koinVersion"
 
     // # Logger
     implementation "com.jakewharton.timber:timber:$rootProject.ext.timberVersion"
@@ -79,10 +80,12 @@ dependencies {
     // # Local Unit Test
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
     testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    testImplementation "android.arch.core:core-testing:1.1.1"
 
     // # UI Testing
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.ext.espressoVersion"
     androidTestImplementation "androidx.test.espresso:espresso-intents:$rootProject.ext.espressoVersion"
     androidTestImplementation "org.mockito:mockito-core:$rootProject.ext.mockitoVersion"
     androidTestImplementation "androidx.test:runner:$rootProject.ext.testRunnerVersion"
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
 }

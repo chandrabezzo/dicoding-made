@@ -9,10 +9,10 @@ import com.bezzo.core.base.BaseHolder
 import com.bezzo.core.listener.OnItemClickListener
 import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
-import com.bezzo.moviecatalogue.data.model.ResultMovie
+import com.bezzo.moviecatalogue.data.model.Movie
 import kotlinx.android.synthetic.main.item_rv_movie.view.*
 
-class MovieRVAdapter constructor(private val context: Context, private val list: ArrayList<ResultMovie>)
+class MovieRVAdapter constructor(private val context: Context, private val list: ArrayList<Movie>)
     : RecyclerView.Adapter<MovieRVAdapter.Item>(){
 
     lateinit var listener: OnItemClickListener
@@ -33,18 +33,18 @@ class MovieRVAdapter constructor(private val context: Context, private val list:
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<ResultMovie>){
+    fun setItem(values: ArrayList<Movie>){
         list.clear()
         list.addAll(values)
     }
 
-    inner class Item(itemView: View): BaseHolder<ResultMovie>(itemView){
+    inner class Item(itemView: View): BaseHolder<Movie>(itemView){
 
         init {
             itemView.setOnClickListener { listener.onItemClick(it, layoutPosition) }
         }
 
-        override fun setContent(model: ResultMovie) {
+        override fun setContent(model: Movie) {
             itemView.tv_judul.text = "${model.title} (${model.releaseDate})"
             itemView.tv_desc.text = "${model.voteAverage}"
             val image = "https://image.tmdb.org/t/p/w185/${model.posterPath}"

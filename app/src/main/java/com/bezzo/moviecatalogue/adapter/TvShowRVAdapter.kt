@@ -9,11 +9,10 @@ import com.bezzo.core.base.BaseHolder
 import com.bezzo.core.listener.OnItemClickListener
 import com.bezzo.core.util.GlideApp
 import com.bezzo.moviecatalogue.R
-import com.bezzo.moviecatalogue.data.model.ResultMovie
-import com.bezzo.moviecatalogue.data.model.ResultTvShow
+import com.bezzo.moviecatalogue.data.model.TvShow
 import kotlinx.android.synthetic.main.item_rv_movie.view.*
 
-class TvShowRVAdapter constructor(private val context: Context, private val list: ArrayList<ResultTvShow>)
+class TvShowRVAdapter constructor(private val context: Context, private val list: ArrayList<TvShow>)
     : RecyclerView.Adapter<TvShowRVAdapter.Item>(){
 
     lateinit var listener: OnItemClickListener
@@ -34,18 +33,18 @@ class TvShowRVAdapter constructor(private val context: Context, private val list
         holder.model = list[position]
     }
 
-    fun setItem(values: ArrayList<ResultTvShow>){
+    fun setItem(values: ArrayList<TvShow>){
         list.clear()
         list.addAll(values)
     }
 
-    inner class Item(itemView: View): BaseHolder<ResultTvShow>(itemView){
+    inner class Item(itemView: View): BaseHolder<TvShow>(itemView){
 
         init {
             itemView.setOnClickListener { listener.onItemClick(it, layoutPosition) }
         }
 
-        override fun setContent(model: ResultTvShow) {
+        override fun setContent(model: TvShow) {
             itemView.tv_judul.text = "${model.name} (${model.firstAirDate})"
             itemView.tv_desc.text = "${model.voteAverage}"
             val image = "https://image.tmdb.org/t/p/w185/${model.posterPath}"

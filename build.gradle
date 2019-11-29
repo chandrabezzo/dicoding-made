@@ -8,7 +8,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -47,11 +47,11 @@ ext {
     playServiceVersion = '16.0.0'
     multiDexVersion = '2.0.1'
     mapsUtils = '0.5+'
-    koinVersion = '1.0.2'
+    koinVersion = '2.0.1'
 
     //Testing
     junitVersion = '4.12'
-    mockitoVersion = '2.8.47'
+    mockitoVersion = '3.1.0'
     espressoVersion = '3.1.0'
     testRunnerVersion = '1.1.0'
 
